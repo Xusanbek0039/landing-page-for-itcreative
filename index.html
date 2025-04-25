@@ -1,560 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Creative Code Academy</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/darkmode.css">
-    <!-- Monospace font for terminal effects -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Sans-serif font for main content -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Creative Academy</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="js/main.js" type="module" defer></script>
 </head>
 <body class="dark-mode">
-    <div class="binary-background" id="binary-background"></div>
-    
-    <div class="cursor"></div>
-    
-    <header>
-        <div class="container">
-            <div class="logo">
-                <span class="logo-text">&lt;ITCCA/&gt;</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#instructors">Instructors</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact" class="contact-btn">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mode-toggle">
-                <input type="checkbox" id="darkmode-toggle">
-                <label for="darkmode-toggle">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                </label>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <div class="code-container">
+        <div class="typing-code">
+          <span class="line">import <span class="keyword">IT</span>CreativeAcademy from <span class="string">'future'</span>;</span>
+          <span class="line"><span class="keyword">const</span> skills = [<span class="string">'Python'</span>, <span class="string">'JavaScript'</span>, <span class="string">'React'</span>];</span>
+          <span class="line"><span class="keyword">function</span> <span class="function">learnToCode</span>() {</span>
+          <span class="line indent">console.<span class="function">log</span>(<span class="string">'Compiling knowledge...'</span>);</span>
+          <span class="line indent"><span class="keyword">return</span> <span class="string">'Expert Developer'</span>;</span>
+          <span class="line">}</span>
         </div>
-    </header>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <p class="loading-text">Initializing Future Developers...</p>
+    </div>
+  </div>
 
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="glitch" data-text="IT Creative Code Academy">IT Creative Code Academy</h1>
-                <p class="subtitle">Where <span class="typing-text"></span></p>
-                <div class="cta-buttons">
-                    <a href="#courses" class="primary-btn">Explore Courses</a>
-                    <a href="#contact" class="secondary-btn">Start Coding Today</a>
-                </div>
-            </div>
-            <div class="terminal-container">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="terminal-btn close"></span>
-                        <span class="terminal-btn minimize"></span>
-                        <span class="terminal-btn maximize"></span>
-                    </div>
-                    <div class="terminal-title">academy@itcca:~</div>
-                </div>
-                <div class="terminal-content" id="terminal-content">
-                    <div class="line">
-                        <span class="prompt">academy@itcca:~$</span> 
-                        <span class="command">whoami</span>
-                    </div>
-                    <div class="line">future developer</div>
-                    <div class="line">
-                        <span class="prompt">academy@itcca:~$</span> 
-                        <span class="command">cat welcome.txt</span>
-                    </div>
-                </div>
-            </div>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <div class="code-bracket">&lt;/&gt;</div>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down"></i>
+        <span>IT Creative Academy</span>
+      </div>
+      <nav class="nav-links">
+        <ul>
+          <li class="nav-item"><a href="#home">Home</a></li>
+          <li class="nav-item dropdown">
+            <a href="#about">About</a>
+            <div class="dropdown-content">
+              <a href="#about-mission">Our Mission</a>
+              <a href="#about-team">Our Team</a>
+              <a href="#about-method">Our Method</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#courses">Courses</a>
+            <div class="dropdown-content">
+              <a href="#courses-python">Python</a>
+              <a href="#courses-js">JavaScript</a>
+              <a href="#courses-html">HTML/CSS</a>
+              <a href="#courses-cpp">C++</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="#stats">Stats</a></li>
+          <li class="nav-item"><a href="#register">Register</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle">
+        <div class="toggle-track">
+          <div class="toggle-moon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="toggle-sun">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="toggle-thumb"></div>
         </div>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="binary-background"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Code Your <span class="highlight">Future</span></h1>
+          <p class="hero-subtitle">Master programming with our immersive and creative learning approach. Transform your passion into expertise.</p>
+          <a href="#register" class="btn btn-primary">Start Learning</a>
+        </div>
+        <div class="hero-visual">
+          <div class="code-editor">
+            <div class="editor-header">
+              <div class="editor-button"></div>
+              <div class="editor-button"></div>
+              <div class="editor-button"></div>
+              <span class="editor-title">main.py</span>
+            </div>
+            <div class="editor-body">
+              <div class="line-numbers">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+              </div>
+              <div class="code-content">
+                <div class="typing-code">
+                  <span class="line"><span class="keyword">def</span> <span class="function">future_developer</span>(student):</span>
+                  <span class="line indent"><span class="keyword">if</span> student.passion:</span>
+                  <span class="line indent indent">skills = learn_with_it_academy()</span>
+                  <span class="line indent indent"><span class="keyword">return</span> <span class="string">"Professional Developer"</span></span>
+                  <span class="line indent"><span class="keyword">else</span>:</span>
+                  <span class="line indent indent"><span class="keyword">return</span> <span class="string">"Try again!"</span></span>
+                  <span class="line"></span>
+                  <span class="line">you = future_developer(you) <span class="comment"># Start today</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Learn to Code, <span class="highlight">Create the Future</span></h3>
-                    <p>At IT Creative Code Academy, we believe coding is more than just a skill—it's a creative superpower. Our mission is to transform beginners into confident developers through immersive, hands-on learning experiences.</p>
-                    <p>Founded by industry experts with a passion for education, we provide a unique approach to teaching code that focuses on creativity, problem-solving, and real-world applications.</p>
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="1500">0</span>
-                            <span class="stat-label">Graduates</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="12">0</span>
-                            <span class="stat-label">Courses</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="95">0</span>
-                            <span class="stat-label">% Job Placement</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="code-snippet">
-                        <pre><code>
-function learnToCode() {
-  const student = new Developer();
-  
-  student.learn([
-    'HTML', 'CSS', 'JavaScript', 
-    'React', 'Python', 'Node.js'
-  ]);
-  
-  student.practice(1000);
-  student.buildProjects();
-  
-  return student.getSkills();
-}
-
-// Your journey starts here
-learnToCode();
-                        </code></pre>
-                    </div>
-                </div>
+    <!-- Icons & Technology Section -->
+    <section id="technologies" class="technologies">
+      <div class="container">
+        <h2 class="section-title">Technologies You'll Learn</h2>
+        <div class="tech-grid">
+          <div class="tech-card" data-tech="html">
+            <div class="tech-icon">
+              <div class="html-icon">
+                <span>&lt;/&gt;</span>
+              </div>
             </div>
+            <h3>HTML</h3>
+            <p>Build the structure of the web</p>
+          </div>
+          <div class="tech-card" data-tech="css">
+            <div class="tech-icon">
+              <div class="css-icon">
+                <span>#</span>
+              </div>
+            </div>
+            <h3>CSS</h3>
+            <p>Style with creative precision</p>
+          </div>
+          <div class="tech-card" data-tech="js">
+            <div class="tech-icon">
+              <div class="js-icon">
+                <span>JS</span>
+              </div>
+            </div>
+            <h3>JavaScript</h3>
+            <p>Add interactivity and logic</p>
+          </div>
+          <div class="tech-card" data-tech="python">
+            <div class="tech-icon">
+              <div class="python-icon">
+                <span>Py</span>
+              </div>
+            </div>
+            <h3>Python</h3>
+            <p>Master the versatile language</p>
+          </div>
+          <div class="tech-card" data-tech="react">
+            <div class="tech-icon">
+              <div class="react-icon">
+                <span>⚛️</span>
+              </div>
+            </div>
+            <h3>React</h3>
+            <p>Build modern web applications</p>
+          </div>
+          <div class="tech-card" data-tech="cpp">
+            <div class="tech-icon">
+              <div class="cpp-icon">
+                <span>C++</span>
+              </div>
+            </div>
+            <h3>C++</h3>
+            <p>Understand powerful performance</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="courses" class="courses-section">
-        <div class="container">
-            <h2 class="section-title">Our Courses</h2>
-            <p class="section-subtitle">Master the languages that shape our digital world</p>
-            <div class="courses-grid">
-                <div class="course-card" data-tech="html-css">
-                    <div class="course-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>HTML & CSS</h3>
-                    <p>Build the foundation of the web with structure and style</p>
-                    <div class="course-details">
-                        <span><i class="fas fa-clock"></i> 8 weeks</span>
-                        <span><i class="fas fa-signal"></i> Beginner</span>
-                    </div>
-                    <a href="#" class="course-btn">Learn More</a>
-                </div>
-                <div class="course-card" data-tech="javascript">
-                    <div class="course-icon">
-                        <i class="fab fa-js"></i>
-                    </div>
-                    <h3>JavaScript</h3>
-                    <p>Bring websites to life with interactive functionality</p>
-                    <div class="course-details">
-                        <span><i class="fas fa-clock"></i> 10 weeks</span>
-                        <span><i class="fas fa-signal"></i> Intermediate</span>
-                    </div>
-                    <a href="#" class="course-btn">Learn More</a>
-                </div>
-                <div class="course-card" data-tech="python">
-                    <div class="course-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>Master the versatile language powering AI and data science</p>
-                    <div class="course-details">
-                        <span><i class="fas fa-clock"></i> 12 weeks</span>
-                        <span><i class="fas fa-signal"></i> Beginner</span>
-                    </div>
-                    <a href="#" class="course-btn">Learn More</a>
-                </div>
-                <div class="course-card" data-tech="react">
-                    <div class="course-icon">
-                        <i class="fab fa-react"></i>
-                    </div>
-                    <h3>React</h3>
-                    <p>Create modern, component-based user interfaces</p>
-                    <div class="course-details">
-                        <span><i class="fas fa-clock"></i> 8 weeks</span>
-                        <span><i class="fas fa-signal"></i> Intermediate</span>
-                    </div>
-                    <a href="#" class="course-btn">Learn More</a>
-                </div>
-                <div class="course-card" data-tech="node">
-                    <div class="course-icon">
-                        <i class="fab fa-node-js"></i>
-                    </div>
-                    <h3>Node.js</h3>
-                    <p>Build scalable server-side applications with JavaScript</p>
-                    <div class="course-details">
-                        <span><i class="fas fa-clock"></i> 10 weeks</span>
-                        <span><i class="fas fa-signal"></i> Advanced</span>
-                    </div>
-                    <a href="#" class="course-btn">Learn More</a>
-                </div>
-                <div class="course-card" data-tech="cpp">
-                    <div class="course-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>C++</h3>
-                    <p>Dive into system-level programming and game development</p>
-                    <div class="course-details">
-                        <span><i class="fas fa-clock"></i> 14 weeks</span>
-                        <span><i class="fas fa-signal"></i> Advanced</span>
-                    </div>
-                    <a href="#" class="course-btn">Learn More</a>
-                </div>
+    <!-- Statistics Section -->
+    <section id="stats" class="statistics">
+      <div class="container">
+        <h2 class="section-title">Our Impact in Numbers</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
             </div>
+            <div class="stat-number" data-target="5000">0</div>
+            <h3>Students</h3>
+            <p>Worldwide learners</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="stat-number" data-target="42">0</div>
+            <h3>Courses</h3>
+            <p>Comprehensive curriculum</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="stat-number" data-target="98">0</div>
+            <h3>Graduation Rate</h3>
+            <p>Success percentage</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="stat-number" data-target="4.8">0.0</div>
+            <h3>Rating</h3>
+            <p>Student satisfaction</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="features" class="features-section">
-        <div class="container">
-            <h2 class="section-title">Why Choose Us</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Hands-on Projects</h3>
-                    <p>Build a portfolio of real-world projects that demonstrate your skills to employers</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Expert Mentorship</h3>
-                    <p>Learn from industry professionals with years of experience in top tech companies</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <h3>Modern Curriculum</h3>
-                    <p>Our courses are regularly updated to reflect the latest industry trends and technologies</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Career Support</h3>
-                    <p>Get help with your resume, portfolio, and interview preparation to land your dream job</p>
-                </div>
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+      <div class="container">
+        <h2 class="section-title">Our Programming Courses</h2>
+        <div class="courses-grid">
+          <div class="course-card" data-course="python">
+            <div class="course-header">
+              <div class="course-icon python-bg">
+                <span>Py</span>
+              </div>
+              <h3>Python Masterclass</h3>
             </div>
+            <div class="course-body">
+              <p>Master Python from fundamentals to advanced concepts. Learn data structures, algorithms, and practical applications.</p>
+              <ul class="course-features">
+                <li>Fundamentals to Advanced</li>
+                <li>Data Science Track</li>
+                <li>12 Weeks Duration</li>
+                <li>Real-world Projects</li>
+              </ul>
+            </div>
+            <div class="course-footer">
+              <a href="#register" class="btn btn-secondary">Learn More</a>
+              <div class="course-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-number">4.9</span>
+              </div>
+            </div>
+          </div>
+          <div class="course-card" data-course="javascript">
+            <div class="course-header">
+              <div class="course-icon js-bg">
+                <span>JS</span>
+              </div>
+              <h3>JavaScript & Web Dev</h3>
+            </div>
+            <div class="course-body">
+              <p>Build modern web applications with JavaScript. Learn DOM manipulation, async programming, and frameworks.</p>
+              <ul class="course-features">
+                <li>Frontend & Backend</li>
+                <li>React & Node.js</li>
+                <li>10 Weeks Duration</li>
+                <li>Portfolio Projects</li>
+              </ul>
+            </div>
+            <div class="course-footer">
+              <a href="#register" class="btn btn-secondary">Learn More</a>
+              <div class="course-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-number">4.8</span>
+              </div>
+            </div>
+          </div>
+          <div class="course-card" data-course="cpp">
+            <div class="course-header">
+              <div class="course-icon cpp-bg">
+                <span>C++</span>
+              </div>
+              <h3>C++ Programming</h3>
+            </div>
+            <div class="course-body">
+              <p>Deep dive into systems programming with C++. Learn memory management, optimization, and object-oriented programming.</p>
+              <ul class="course-features">
+                <li>Systems Programming</li>
+                <li>Performance Optimization</li>
+                <li>14 Weeks Duration</li>
+                <li>Game Development Track</li>
+              </ul>
+            </div>
+            <div class="course-footer">
+              <a href="#register" class="btn btn-secondary">Learn More</a>
+              <div class="course-rating">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-number">4.7</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="instructors" class="instructors-section">
-        <div class="container">
-            <h2 class="section-title">Meet Our Instructors</h2>
-            <div class="instructors-grid">
-                <div class="instructor-card">
-                    <div class="instructor-image">
-                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Alex Johnson">
-                        <div class="instructor-socials">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    <div class="instructor-info">
-                        <h3>Alex Johnson</h3>
-                        <p class="instructor-role">Full Stack Developer</p>
-                        <p class="instructor-bio">Former Google engineer with 10+ years of experience in web development</p>
-                    </div>
-                </div>
-                <div class="instructor-card">
-                    <div class="instructor-image">
-                        <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sophia Chen">
-                        <div class="instructor-socials">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    <div class="instructor-info">
-                        <h3>Sophia Chen</h3>
-                        <p class="instructor-role">AI & Python Specialist</p>
-                        <p class="instructor-bio">PhD in Computer Science with focus on machine learning and AI applications</p>
-                    </div>
-                </div>
-                <div class="instructor-card">
-                    <div class="instructor-image">
-                        <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marcus Williams">
-                        <div class="instructor-socials">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    <div class="instructor-info">
-                        <h3>Marcus Williams</h3>
-                        <p class="instructor-role">Mobile Development Lead</p>
-                        <p class="instructor-bio">Created apps with millions of downloads, specializes in React Native</p>
-                    </div>
-                </div>
+    <!-- Registration Section -->
+    <section id="register" class="registration">
+      <div class="container">
+        <div class="registration-card">
+          <div class="registration-content">
+            <h2>Begin Your Journey</h2>
+            <p>Register for a course and transform your future in tech. Limited spots available for our next cohort.</p>
+          </div>
+          <form id="registration-form" class="registration-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required>
             </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="course">Select Course</label>
+              <select id="course" name="course" required>
+                <option value="" disabled selected>Choose a course</option>
+                <option value="python">Python Masterclass</option>
+                <option value="javascript">JavaScript & Web Dev</option>
+                <option value="cpp">C++ Programming</option>
+                <option value="html-css">HTML & CSS Fundamentals</option>
+                <option value="data-science">Data Science with Python</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Why do you want to learn coding? (Optional)</label>
+              <textarea id="message" name="message" placeholder="Tell us about your goals"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Register Now</button>
+          </form>
         </div>
+      </div>
     </section>
+  </main>
 
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Student Testimonials</h2>
-            <div class="testimonials-container">
-                <div class="testimonial-card active">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>The hands-on approach at IT Creative Code Academy transformed me from a complete beginner to a confident developer in just 6 months. Now I'm working at a tech startup and loving every minute of it!</p>
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Jamie Taylor">
-                        <div>
-                            <h4>Jamie Taylor</h4>
-                            <p>Front-end Developer @ TechVision</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>The instructors truly care about your progress. They went above and beyond to help me understand difficult concepts and build my portfolio. Best educational investment I've ever made.</p>
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Michael Rodriguez">
-                        <div>
-                            <h4>Michael Rodriguez</h4>
-                            <p>Software Engineer @ DataFlow</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>As someone transitioning careers, I was nervous about learning to code. The supportive community and step-by-step curriculum made it approachable and even fun! I'm now a full-stack developer.</p>
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sarah Johnson">
-                        <div>
-                            <h4>Sarah Johnson</h4>
-                            <p>Full-stack Developer @ WebSolutions</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-controls">
-                <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
-                <div class="testimonial-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
-            </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <div class="code-bracket">&lt;/&gt;</div>
+          </div>
+          <span>IT Creative Academy</span>
         </div>
-    </section>
-
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Do I need prior coding experience?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No prior experience is needed for our beginner courses. We start from the absolute basics and gradually build your skills. For advanced courses, we recommend having foundational knowledge of programming concepts.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How much time should I commit each week?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We recommend dedicating 15-20 hours per week for optimal progress. This includes classroom time, practice sessions, and project work. However, you can adjust based on your personal schedule and learning pace.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Will I get a certificate upon completion?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! All graduates receive an industry-recognized certification. More importantly, you'll have a portfolio of projects that demonstrate your skills to potential employers.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Do you offer job placement assistance?</h3>
-                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely. Our career services team helps with resume building, interview preparation, and connecting you with our network of hiring partners. We also host regular networking events with industry professionals.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#courses">Courses</a></li>
+              <li><a href="#register">Register</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Courses</h3>
+            <ul>
+              <li><a href="#courses-python">Python</a></li>
+              <li><a href="#courses-js">JavaScript</a></li>
+              <li><a href="#courses-html">HTML/CSS</a></li>
+              <li><a href="#courses-cpp">C++</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="mailto:info@itcreativeacademy.com">info@itcreativeacademy.com</a></li>
+              <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+              <li>123 Coding Street, Tech City</li>
+            </ul>
+          </div>
         </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Start Your Coding Journey</h2>
-            <div class="contact-content">
-                <div class="contact-form-container">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <div class="input-container">
-                                <i class="fas fa-user"></i>
-                                <input type="text" id="name" name="name" required>
-                                <span class="error-message"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <div class="input-container">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" id="email" name="email" required>
-                                <span class="error-message"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <div class="input-container">
-                                <i class="fas fa-phone"></i>
-                                <input type="tel" id="phone" name="phone">
-                                <span class="error-message"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="course">Course of Interest</label>
-                            <div class="input-container">
-                                <i class="fas fa-laptop-code"></i>
-                                <select id="course" name="course">
-                                    <option value="">Select a course</option>
-                                    <option value="html-css">HTML & CSS</option>
-                                    <option value="javascript">JavaScript</option>
-                                    <option value="python">Python</option>
-                                    <option value="react">React</option>
-                                    <option value="node">Node.js</option>
-                                    <option value="cpp">C++</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <div class="input-container">
-                                <textarea id="message" name="message" rows="4"></textarea>
-                                <span class="error-message"></span>
-                            </div>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">Submit</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="info-details">
-                            <h3>Visit Us</h3>
-                            <p>123 Tech Lane, Innovation District<br>San Francisco, CA 94107</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="info-details">
-                            <h3>Email Us</h3>
-                            <p>info@itcreativecode.com<br>admissions@itcreativecode.com</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="info-details">
-                            <h3>Call Us</h3>
-                            <p>(555) 123-4567<br>Mon-Fri: 9am-6pm PST</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 IT Creative Academy. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">&lt;ITCCA/&gt;</span>
-                    <p>Learn to Code, Create the Future</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Academy</h4>
-                        <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#courses">Courses</a></li>
-                            <li><a href="#instructors">Instructors</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Tutorials</a></li>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Community</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 IT Creative Code Academy. All Rights Reserved.</p>
-                <p>Designed with <i class="fas fa-heart"></i> by Creative Coders</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js" type="module"></script>
-    <script src="js/terminal.js" type="module"></script>
-    <script src="js/animations.js" type="module"></script>
-    <script src="js/darkmode.js" type="module"></script>
-    <script src="js/form.js" type="module"></script>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

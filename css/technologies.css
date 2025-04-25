@@ -1,0 +1,152 @@
+/* Technologies Section Styles */
+.technologies {
+  background-color: var(--bg-secondary);
+  position: relative;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.tech-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.tech-card:hover .tech-icon {
+  animation: pulse 2s infinite;
+}
+
+.tech-icon > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: monospace;
+  color: white;
+}
+
+.html-icon {
+  background: linear-gradient(135deg, #E44D26, #F16529);
+  box-shadow: 0 5px 15px rgba(228, 77, 38, 0.3);
+}
+
+.css-icon {
+  background: linear-gradient(135deg, #264DE4, #2965F1);
+  box-shadow: 0 5px 15px rgba(38, 77, 228, 0.3);
+}
+
+.js-icon {
+  background: linear-gradient(135deg, #F0DB4F, #F7DF1E);
+  box-shadow: 0 5px 15px rgba(240, 219, 79, 0.3);
+  color: #323330 !important;
+}
+
+.python-icon {
+  background: linear-gradient(135deg, #3776AB, #306998);
+  box-shadow: 0 5px 15px rgba(55, 118, 171, 0.3);
+}
+
+.react-icon {
+  background: linear-gradient(135deg, #61DAFB, #00B5D8);
+  box-shadow: 0 5px 15px rgba(97, 218, 251, 0.3);
+}
+
+.cpp-icon {
+  background: linear-gradient(135deg, #00599C, #004482);
+  box-shadow: 0 5px 15px rgba(0, 89, 156, 0.3);
+}
+
+.tech-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.tech-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Technology-specific hover effects */
+.tech-card[data-tech="html"]:hover {
+  box-shadow: 0 10px 25px rgba(228, 77, 38, 0.2);
+}
+
+.tech-card[data-tech="css"]:hover {
+  box-shadow: 0 10px 25px rgba(38, 77, 228, 0.2);
+}
+
+.tech-card[data-tech="js"]:hover {
+  box-shadow: 0 10px 25px rgba(240, 219, 79, 0.2);
+}
+
+.tech-card[data-tech="python"]:hover {
+  box-shadow: 0 10px 25px rgba(55, 118, 171, 0.2);
+}
+
+.tech-card[data-tech="react"]:hover {
+  box-shadow: 0 10px 25px rgba(97, 218, 251, 0.2);
+}
+
+.tech-card[data-tech="cpp"]:hover {
+  box-shadow: 0 10px 25px rgba(0, 89, 156, 0.2);
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
