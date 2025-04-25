@@ -24,9 +24,11 @@ function createBinaryBackground(container) {
     row.className = 'binary-row';
     row.style.display = 'flex';
     row.style.justifyContent = 'space-between';
+    row.style.transform = 'rotate(90deg)';
     
     for (let j = 0; j < cols; j++) {
       const digit = document.createElement('span');
+      // Use actual binary numbers (0 or 1)
       digit.textContent = Math.round(Math.random());
       digit.style.color = 'rgba(94, 53, 177, 0.1)';
       digit.style.fontSize = '12px';
@@ -42,7 +44,7 @@ function createBinaryBackground(container) {
     container.appendChild(row);
   }
   
-  // Periodically update some binary digits
+  // Periodically update binary digits
   setInterval(() => {
     const randomDigits = Math.floor(binary.length * 0.1);
     for (let i = 0; i < randomDigits; i++) {

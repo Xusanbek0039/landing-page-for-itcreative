@@ -80,6 +80,9 @@
   padding: 8px 0;
   position: relative;
   transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-item a::after {
@@ -99,6 +102,17 @@
 
 .nav-item a:hover::after {
   width: 100%;
+}
+
+.nav-item a:hover .nav-icon {
+  transform: translateY(-2px) rotate(10deg);
+  color: var(--primary-light);
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Dropdown styles */

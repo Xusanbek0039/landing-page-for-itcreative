@@ -17,6 +17,12 @@
   height: 100%;
   z-index: var(--z-negative);
   overflow: hidden;
+  transform: rotate(-90deg);
+}
+
+.binary-row {
+  white-space: nowrap;
+  margin: 2px 0;
 }
 
 .binary-background::before {
