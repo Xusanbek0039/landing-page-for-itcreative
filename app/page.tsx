@@ -32,7 +32,7 @@ export default function Home() {
         <div className="container relative z-10 mx-auto flex flex-col items-center justify-center px-4 text-center">
           <AnimatedSection>
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              Code Your Future with <span className="text-primary">bolt.new</span>
+            <span className="text-primary">IT Creative</span> orqali kelajak kasblarini o'rganing! 
             </h1>
             <p className="mt-6 max-w-3xl text-lg text-muted-foreground sm:text-xl">
               Learn real-world programming skills through hands-on projects and expert mentorship. From beginner to

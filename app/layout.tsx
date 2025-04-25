@@ -8,9 +8,9 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "bolt.new - Code Your Future",
-  description: "Learn to code with project-based courses and expert mentorship",
-    generator: 'v0.dev'
+  title: "Dasturlashga Ilk Qadam - ITCreative.uz",
+  description: "Loyihaga asoslangan kurslar va ekspert maslahati yordamida kodlashni o'rganing",
+    generator: 'itcreative.uz'
 }
 
 export default function RootLayout({
