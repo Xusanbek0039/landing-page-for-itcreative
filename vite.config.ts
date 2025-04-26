@@ -1,10 +1,8 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// BU YERNI TUZAT
 export default defineConfig({
-  base: '/landing-page-for-itcreative/', // <<< BU YERNI QO‘SH
+  base: '/',
   plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
-});
+})
