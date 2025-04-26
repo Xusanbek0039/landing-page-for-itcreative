@@ -40,7 +40,6 @@ function initHandwrittenText() {
 // Update handwritten text content
 function updateHandwrittenText() {
   const handwrittenRows = document.querySelectorAll(".handwritten-row")
-  const newText = "IT Creative Code Academy"
 
   handwrittenRows.forEach((row) => {
     row.textContent = `${newText} ${newText}`

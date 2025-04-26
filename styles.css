@@ -443,10 +443,10 @@ section {
 }
 
 .handwritten-row {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  margin-bottom: 10px;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  animation: none !important;
 }
 
 .subtitle {
@@ -1692,4 +1692,37 @@ footer {
     min-height: 150px;
     max-height: 200px;
   }
+}
+.terminal-body {
+  background: #0d0d0d;
+  color: #00ff9d;
+  padding: 20px;
+  font-family: 'Fira Code', monospace;
+  height: 400px;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ff9d50;
+  /* YANGI QO'SHILDI */
+  text-align: left; 
+}
+
+#terminal-text {
+  display: block;
+  margin-top: 10px;
+  /* YANGI QO'SHILDI */
+  text-align: left; 
+  white-space: pre; /* Kod formatni saqlash uchun */
+}
+
+#terminal-output {
+  /* YANGI QO'SHILDI */
+  text-align: left;
+}
+
+.code-line {
+  margin: 0;
+  padding: 2px 0;
+  white-space: pre;
+  /* YANGI QO'SHILDI */
+  text-align: left;
 }
